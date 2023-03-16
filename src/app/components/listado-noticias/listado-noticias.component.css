@@ -1,0 +1,12 @@
+.card{
+    transition: all 0.3s;
+    
+    }
+.card:hover{
+transform: scale(1.01);
+border-color: rgb(29, 140, 237);
+
+}
+.textCR{
+    text-align: center;
+}

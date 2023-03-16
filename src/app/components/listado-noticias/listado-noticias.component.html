@@ -1,0 +1,31 @@
+<div class="card-deck row row-cols1 row-cols-md-2 g-4 mt4">
+    <!--listNoticias tiene que salir del listado-noticias.component.ts. @input listNoticias:any; -->
+    <div *ngFor="let noticias of listNoticias | paginate: { itemsPerPage: 6, currentPage: page }" class="col">
+        <div class="card h-100">
+        <img [src]="noticias.urlToImage "    class="card-img-top"  alt="...">
+        <div class="card-body">
+           <span class="badge bg-primary mb-1">{{noticias.source.name}}</span>
+           <h5 class="car-title">{{noticias.title}}</h5>
+           <p class="card-text">{{noticias.description}}</p>
+           <a [href]="noticias.url" target="_blank"class="btn btn-primary btn-block">Ver Noticia Completa</a>
+        </div>
+        <div class="card-footer">
+            <h6>Publicado por:</h6>
+           <small>{{noticias.author}}</small>
+        </div>
+        </div>
+    </div>    
+    
+</div>
+
+
+<div class="d-flex justify-content-center mt-5">
+    <pagination-controls (pageChange)="page = $event" previousLabel="Anterior"  nextLabel="Siguiente"></pagination-controls>
+   
+
+</div>
+<div>
+    <p class="textCR">me.tinchost © Since 1981 - Todos los derechos reservados.</p>
+</div>
+ 
+   
